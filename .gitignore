@@ -5,6 +5,7 @@ target
 /.classpath
 /.project
 /.settings
+/.g8
 /RUNNING_PID
 *.bin
 *.lock
