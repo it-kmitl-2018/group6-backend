@@ -1,0 +1,17 @@
+logs
+target
+/.idea
+/.idea_modules
+/.classpath
+/.project
+/.settings
+/.g8
+/RUNNING_PID
+/gradlew
+/gradlew.bat
+/gradle
+/.gradle
+/build.gradle
+*.bin
+*.lock
+*.jar
