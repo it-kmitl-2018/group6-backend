@@ -1,7 +1,7 @@
 name := """group6"""
 organization := "th.ac.kmitl.it.soa"
 
-version := "1.0-SNAPSHOT"
+version := "1.0.0-SNAPSHOT"
 
 lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
