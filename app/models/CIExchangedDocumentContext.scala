@@ -1,4 +1,0 @@
-package models
-
-case class CIExchangedDocumentContext(
-    guidelineSpecifiedCIDocumentContextParameter: GuidelineSpecifiedCIDocumentContextParameter)
