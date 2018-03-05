@@ -1,3 +1,3 @@
 package models
 
-case class GuidelineSpecifiedCIDocumentContextParameter(ID: String)
+case class GuidelineSpecifiedCIDocumentContextParameter(id: String)
