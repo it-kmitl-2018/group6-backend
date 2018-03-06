@@ -1,3 +1,3 @@
 package models
 
-case class GuidelineSpecifiedDocument(GuidelineId: String)
+case class GuidelineSpecifiedDocument(guidelineId: String)
