@@ -1,6 +1,6 @@
 package models.ExchangedDocument
 
-case class DocumentHeader(
+case class TaxInvoiceHeader(
     id: String,
     documentName: String,
     documentTypeCode: String,
