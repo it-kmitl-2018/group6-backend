@@ -8,4 +8,4 @@ case class DocumentHeader(
     purpose: String,
     purposeCode: String,
     creationDateTime: Long,
-    includedNote: DocumentIncludedNote)
+    remark: String)
