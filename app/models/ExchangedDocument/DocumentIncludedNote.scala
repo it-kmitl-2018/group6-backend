@@ -1,6 +1,5 @@
 package models.ExchangedDocument
 
-case class IncludedNote(
+case class DocumentIncludedNote(
     subject: String,
-    content: String
-)
+    content: String)
