@@ -1,6 +1,6 @@
 package models.ExchangedDocument
 
-case class ExchangedDocument(
+case class DocumentHeader(
     id: String,
     documentName: String,
     documentTypeCode: String,
@@ -8,5 +8,4 @@ case class ExchangedDocument(
     purpose: String,
     purposeCode: String,
     creationDateTime: Long,
-    includedNote: IncludedNote
-)
+    includedNote: DocumentIncludedNote)
