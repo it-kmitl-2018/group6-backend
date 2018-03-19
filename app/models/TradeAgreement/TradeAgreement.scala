@@ -4,5 +4,5 @@ case class TradeAgreement(
     buyer: Dealer,
     seller: Dealer,
     deliveryTypeCode: String,
-    buyOrderReference: ReferenceDocument,
+    orderReference: ReferenceDocument,
     additionalReference: ReferenceDocument)
