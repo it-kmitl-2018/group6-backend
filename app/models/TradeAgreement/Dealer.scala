@@ -1,6 +1,7 @@
 package models.TradeAgreement
 
 import models.CommercialTransaction.Address
+import play.api.libs.json.{Json, OFormat}
 
 case class Dealer(
     dealerId: String,
@@ -10,3 +11,7 @@ case class Dealer(
     uri: String,
     email: String,
     address: Address)
+
+object Dealer {
+  implicit val dealerFormat: OFormat[Dealer] = Json.format[Dealer]
+}
