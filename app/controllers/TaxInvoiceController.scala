@@ -4,8 +4,8 @@ import definitions.ErrorDefinition.{BAD_JSON_FORMAT, EMPTY_JSON_REQUEST, NOT_JSO
 import facades.TaxInvoiceFacade
 import javax.inject._
 import models.TradeAgreement.TradeAgreement
-import play.api.libs.json.{Json, OFormat}
 import play.api.mvc._
+import utilities.Json
 
 @Singleton
 class TaxInvoiceController @Inject()(cc: ControllerComponents, taxInvoiceFacade: TaxInvoiceFacade) extends AbstractController(cc) {
@@ -19,11 +19,10 @@ class TaxInvoiceController @Inject()(cc: ControllerComponents, taxInvoiceFacade:
     }
   }
 
-  def validate[T](request: Request[AnyContent], action: T => Result)
-                 (implicit genericFormat: OFormat[T]): Result = {
-    val objectFromJson = Json.fromJson[T](request.body.asJson.get)
+  def validate[T: Manifest](request: Request[AnyContent], action: T => Result): Result = {
+    val objectFromJson = Json.toObject[T](request.body.asJson.get.toString())
 
-    if (objectFromJson.isSuccess) {
+    if (objectFromJson.isDefined) {
       action(objectFromJson.get)
     } else {
       BadRequest(BAD_JSON_FORMAT)
