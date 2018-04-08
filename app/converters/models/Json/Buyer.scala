@@ -1,6 +1,6 @@
-package convertermodels.Json
+package converters.models.Json
 
-case class Seller(
+case class Buyer(
     taxNumber: String,
     branchNumber: String,
     nameEn: String,

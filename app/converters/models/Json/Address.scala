@@ -1,4 +1,4 @@
-package convertermodels.Json
+package converters.models.Json
 
 case class Address(
     lineOne: String,
