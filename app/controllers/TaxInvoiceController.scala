@@ -9,7 +9,7 @@ import utilities.Json
 
 @Singleton
 class TaxInvoiceController @Inject()(cc: ControllerComponents, taxInvoiceFacade: TaxInvoiceFacade) extends AbstractController(cc) {
-  def convertTradeAgreementToJson() = Action { implicit request: Request[AnyContent] =>
+  def convertToJson() = Action { implicit request: Request[AnyContent] =>
     request match {
       case _ if !request.hasBody => BadRequest(EMPTY_JSON_REQUEST)
       case _ if request.body.asJson.isEmpty => BadRequest(NOT_JSON_REQUEST)
