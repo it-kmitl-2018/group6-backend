@@ -6,49 +6,60 @@ import models.TradeAgreement.TradeAgreement
 @Singleton
 class TaxInvoiceConverterMock {
   def convertTradeAgreementToJson(tradeAgreement: TradeAgreement): String = {
-    "{" +
-      "\"number\": \"INV-178324672\"," +
-      "\"seller\": {" +
-      "    \"tax_number\": \"0105522022883\"," +
-      "    \"branch_number\": \"00000\"," +
-      "    \"name_en\": \"TOYOTA THONBURI CO, LTD.\"," +
-      "    \"name_th\": \"บริษัท โตโยต้า ธนบุรี จำกัด\"," +
-      "    \"email\": \"sales@toyotathonburi.com\"," +
-      "    \"telephone\": \"02-4799009\", " +
-      "    \"fax\": \"02-4799009\",        " +
-      "    \"address\": {\n" +
-      "        \"line_one\": \"สำนักงานใหญ่ เลขที่ 313/1\",            " +
-      "        \"line_two\": \"ถนนรัชดาภิเษก แขวงบุคลโล เขตธนบุรี กรุงเทพมหานคร 10600\"," +
-      "        \"city_name\": \"ธนบุรี\"," +
-      "        \"city_sub_division_name\": \"บุคคโล\"," +
-      "        \"post_code\": \"10600\"," +
-      "        \"country_sub_division\": \"กรุงเทพมหานคร\"," +
-      "        \"country_name\": \"TH\"" +
-      "    }" +
-      "}," +
-      "\"buyer\": {" +
-      "    \"tax_number\": \"0107536000986\"," +
-      "    \"branch_number\": \"00000\"," +
-      "    \"name_en\": \"Kiatnakin Bank Public Company Limited\"," +
-      "    \"name_th\": \"ธนาคารเกียรตินาคิน จำกัด (มหาชน)\"," +
-      "    \"email\": \"contact@kiatnakin.co.th\"," +
-      "    \"telephone\": \"02-1655555\"," +
-      "    \"fax\": \"02-1655555\"," +
-      "    \"address\": {" +
-      "        \"line_one\": \"500 ถนนเพลินจิต\"," +
-      "        \"line_two\": \"แขวงลุมพินี เขตปทุมวัน กรุงเทพมหานคร 10330\"," +
-      "        \"city_name\": \"ปทุมวัน\"," +
-      "        \"city_sub_division_name\": \"ลุมพินี\"," +
-      "        \"post_code\": \"10330\"," +
-      "        \"country_sub_division\": \"กรุงเทพมหานคร\"," +
-      "        \"country_name\": \"TH\"" +
-      "    }" +
-      "}," +
-      "\"transaction_date\": \"2017-12-18 12:24:00\"," +
-      "\"note\": {" +
-      "    \"subject\": \"หมายเหตุ\"," +
-      "    \"content\": \"\\n แบบรถ : Toyota Fortuner 3.0V AT 2014 TRD\\n เลขเครื่อง : 1KD-FTV\\n เลขตัวถัง : FN-83741\\n สี : สีเทา\\n\" " +
-      "}" +
+    "{\n" +
+      "    \"buyer\": {\n" +
+      "        \"dealerId\": \"dealerId\",\n" +
+      "        \"globalId\": \"globalId\",\n" +
+      "        \"name\": \"name\",\n" +
+      "        \"taxPayerId\": \"taxPayerId\",\n" +
+      "        \"uri\": \"uri\",\n" +
+      "        \"email\": \"email\",\n" +
+      "        \"address\": {\n" +
+      "            \"postalCode\": \"123\",\n" +
+      "            \"buildingName\": \"building\",\n" +
+      "            \"lane\": \"lane\",\n" +
+      "            \"villageName\": \"village\",\n" +
+      "            \"villageNumber\": \"456\",\n" +
+      "            \"streetName\": \"sukhumvit\",\n" +
+      "            \"districtCode\": \"district\",\n" +
+      "            \"subDistrictCode\": \"asjdh\",\n" +
+      "            \"countryCode\": \"thailand\",\n" +
+      "            \"countrySubDivisionCode\": \"bangkok\",\n" +
+      "            \"buildingNumber\": \"789\"\n" +
+      "        }\n" +
+      "    },\n" +
+      "    \"seller\": {\n" +
+      "        \"dealer_id\": \"dealerId\",\n" +
+      "        \"global_id\": \"globalId\",\n" +
+      "        \"name\": \"name\",\n" +
+      "        \"tax_payer_id\": \"taxPayerId\",\n" +
+      "        \"uri\": \"uri\",\n" +
+      "        \"email\": \"email\",\n" +
+      "        \"address\": {\n" +
+      "            \"postal_code\": \"123\",\n" +
+      "            \"building_name\": \"building\",\n" +
+      "            \"lane\": \"lane\",\n" +
+      "            \"village_name\": \"village\",\n" +
+      "            \"village_number\": \"456\",\n" +
+      "            \"street_name\": \"sukhumvit\",\n" +
+      "            \"district_code\": \"district\",\n" +
+      "            \"subDistrict_code\": \"asjdh\",\n" +
+      "            \"country_code\": \"thailand\",\n" +
+      "            \"country_sub_division_code\": \"bangkok\",\n" +
+      "            \"building_number\": \"789\"\n" +
+      "        }\n" +
+      "    },\n" +
+      "    \"delivery_type_code\": \"D123\",\n" +
+      "    \"order_reference\": {\n" +
+      "        \"id\": \"id1\",\n" +
+      "        \"created_date\": 1234567890,\n" +
+      "        \"reference_type_code\": \"CODE1\"\n" +
+      "    },\n" +
+      "    \"additional_reference\": {\n" +
+      "        \"id\": \"id1\",\n" +
+      "        \"created_date\": 1234567890, \n" +
+      "        \"reference_type_code\": \"CODE2\"\n" +
+      "    }\n" +
       "}"
   }
 }
