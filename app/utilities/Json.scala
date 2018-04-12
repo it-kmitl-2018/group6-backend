@@ -8,6 +8,7 @@ import com.fasterxml.jackson.module.scala.DefaultScalaModule
 import com.fasterxml.jackson.module.scala.experimental.ScalaObjectMapper
 import org.joda.time.DateTime
 import org.joda.time.format.DateTimeFormat
+import play.api.libs.json.JsValue
 
 trait Json {
 
@@ -21,6 +22,7 @@ trait Json {
 
 object Json {
 
+  private val jsonParser = play.api.libs.json.Json
   private val mapper = new ObjectMapper with ScalaObjectMapper
   mapper.registerModule(DefaultScalaModule)
   mapper.registerModule(JodaJacksonModule)
@@ -28,7 +30,9 @@ object Json {
   mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE)
   mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
 
-  def toJson(obj: AnyRef): String = mapper.writeValueAsString(obj)
+  def toJson(obj: AnyRef): JsValue = jsonParser.parse(mapper.writeValueAsString(obj))
+
+  def toJsonAsString(obj: AnyRef): String = mapper.writeValueAsString(obj)
 
   def toObject[T: Manifest](content: String): Option[T] = {
     if (content == null || content.isEmpty)
@@ -39,19 +43,19 @@ object Json {
 
   implicit class AnySetter(any: AnyRef) {
 
-    def toText: String = Json.toJson(any)
+    def toText: String = Json.toJsonAsString(any)
 
   }
 
   implicit class ListSetter(list: List[Any]) {
 
-    def toText: String = Json.toJson(list)
+    def toText: String = Json.toJsonAsString(list)
 
   }
 
   implicit class MapSetter(map: Map[String, String]) {
 
-    def toText: String = Json.toJson(map)
+    def toText: String = Json.toJsonAsString(map)
 
   }
 
