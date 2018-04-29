@@ -1,0 +1,26 @@
+package models.TradeItem
+
+case class Item(
+    lineId: String,
+    itemAmountPerUnit: Float,
+    isChargedPerUnit: Boolean,
+    chargeAmountPerUnit: Float,
+    chargePerUnitTypeCode: String,
+    itemQuantity: Int,
+    itemPerPackageQuantity: Int,
+    taxTypeCode: String,
+    taxRate: Float,
+    basisAmount: Float,
+    isCharged: Boolean,
+    chargeAmount: Float,
+    chargeTypeCode: String,
+    totalTaxAmount: Float,
+    totalBasisAmount: Float,
+    grandTotalAmount: Float,
+    itemId: String,
+    itemGlobalId: String,
+    itemName: String,
+    batchId: String,
+    expiryDateTime: Long,
+    productionCountryId: String,
+    remark: String)
