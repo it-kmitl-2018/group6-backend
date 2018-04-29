@@ -4,7 +4,7 @@ case class PaymentDetail(
     currencyCode: String,
     taxTypeCode: String,
     taxRate: Float,
-    amount: Float,
+    basisAmount: Float,
     isCharged: Boolean,
     chargeAmount: Float,
     chargeTypeCode: String,
