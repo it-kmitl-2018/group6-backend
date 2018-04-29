@@ -1,4 +1,4 @@
-package converters.models.Json
+package converters.messages.Json
 
 case class Seller(
     taxNumber: String,

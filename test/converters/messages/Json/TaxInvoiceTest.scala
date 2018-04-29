@@ -1,4 +1,4 @@
-package converters.models.Json
+package converters.messages.Json
 
 import org.scalatest.FunSuite
 
