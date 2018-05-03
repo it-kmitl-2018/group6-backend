@@ -2,11 +2,13 @@ package converters
 
 import javax.inject.Singleton
 
-import converters.messages.Json.{Address, Buyer, Seller, TaxInvoice}
+import converters.messages.Json._
 import models.CommercialTransaction
 import models.TradeAgreement.{Dealer, TradeAgreement}
 import play.api.libs.json.JsValue
 import utilities.Json
+
+import scala.collection.mutable.ListBuffer
 
 @Singleton
 class TaxInvoiceConverter {
@@ -15,7 +17,11 @@ class TaxInvoiceConverter {
     val sellerAddress = convertAddressToJson(tradeAgreement.seller.address)
     val buyer = convertBuyerToJson(tradeAgreement.buyer, buyerAddress)
     val seller = convertSellerToJson(tradeAgreement.seller, sellerAddress)
-    val taxInvoice = TaxInvoice(seller, buyer)
+    val number = ""
+    val transactionDate = ""
+    val note = convertNoteToJson()
+    val items = convertItemsToJson()
+    val taxInvoice = TaxInvoice(number, seller, buyer, transactionDate, note, items)
 
     Json.toJson(taxInvoice)
   }
@@ -64,5 +70,19 @@ class TaxInvoiceConverter {
       sellerAddress)
 
     seller
+  }
+
+  private def convertNoteToJson(): Note = {
+    val note = Note("หมายเหตุ", "")
+
+    //TODO: wait for update TaxInvoiceController
+    note
+  }
+
+  private def convertItemsToJson(): ListBuffer[Item] = {
+    val items = new ListBuffer[Item]
+
+    //TODO: wait for update TaxInvoiceController
+    items
   }
 }

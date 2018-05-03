@@ -1,3 +1,11 @@
 package converters.messages.Json
 
-case class TaxInvoice(seller: Seller, buyer: Buyer)
+import scala.collection.mutable.ListBuffer
+
+case class TaxInvoice(
+    number: String,
+    seller: Seller,
+    buyer: Buyer,
+    transactionDate: String,
+    note: Note,
+    items: ListBuffer[Item])
