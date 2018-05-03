@@ -1,12 +1,12 @@
 package models.TradeAgreement
 
-import models.CommercialTransaction.Address
+import models.CommercialTransaction.AddressForm
 
-case class Dealer(
+case class DealerForm(
     dealerId: String,
     globalId: String,
     name: String,
     taxPayerId: String,
     uri: String,
     email: String,
-    address: Address)
+    address: AddressForm)
