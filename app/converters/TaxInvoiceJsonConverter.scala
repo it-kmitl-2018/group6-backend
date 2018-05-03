@@ -11,7 +11,7 @@ import utilities.Json
 import scala.collection.mutable.ListBuffer
 
 @Singleton
-class TaxInvoiceConverter {
+class TaxInvoiceJsonConverter {
   def convertTradeAgreementToJson(tradeAgreement: TradeAgreementForm): JsValue = {
     val buyerAddress = convertAddressToJson(tradeAgreement.buyer.address)
     val sellerAddress = convertAddressToJson(tradeAgreement.seller.address)
