@@ -4,7 +4,7 @@ import javax.inject.Singleton
 
 import converters.messages.Json._
 import models.CommercialTransaction
-import models.TradeAgreement.{Dealer, TradeAgreement}
+import models.TradeAgreement.{DealerForm, TradeAgreementForm}
 import play.api.libs.json.JsValue
 import utilities.Json
 
@@ -12,7 +12,7 @@ import scala.collection.mutable.ListBuffer
 
 @Singleton
 class TaxInvoiceConverter {
-  def convertTradeAgreementToJson(tradeAgreement: TradeAgreement): JsValue = {
+  def convertTradeAgreementToJson(tradeAgreement: TradeAgreementForm): JsValue = {
     val buyerAddress = convertAddressToJson(tradeAgreement.buyer.address)
     val sellerAddress = convertAddressToJson(tradeAgreement.seller.address)
     val buyer = convertBuyerToJson(tradeAgreement.buyer, buyerAddress)
@@ -26,7 +26,7 @@ class TaxInvoiceConverter {
     Json.toJson(taxInvoice)
   }
 
-  private def convertAddressToJson(tradeAgreementAddress: CommercialTransaction.Address): Address = {
+  private def convertAddressToJson(tradeAgreementAddress: CommercialTransaction.AddressForm): Address = {
     val address = Address(
       tradeAgreementAddress.buildingName+" "
         +tradeAgreementAddress.buildingNumber,
@@ -44,7 +44,7 @@ class TaxInvoiceConverter {
     address
   }
 
-  private def convertBuyerToJson(dealer: Dealer, buyerAddress: Address): Buyer = {
+  private def convertBuyerToJson(dealer: DealerForm, buyerAddress: Address): Buyer = {
     val buyer = Buyer(
       dealer.taxPayerId,
       "",
@@ -58,7 +58,7 @@ class TaxInvoiceConverter {
     buyer
   }
 
-  private def convertSellerToJson(dealer: Dealer, sellerAddress: Address): Seller = {
+  private def convertSellerToJson(dealer: DealerForm, sellerAddress: Address): Seller = {
     val seller = Seller(
       dealer.taxPayerId,
       "",
