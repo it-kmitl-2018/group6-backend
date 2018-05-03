@@ -1,6 +1,6 @@
 package models.CommercialTransaction
 
-case class Address(
+case class AddressForm(
     postalCode: String,
     buildingName: String,
     lane: String,
