@@ -1,6 +1,6 @@
 package models.TradeParty
 
-case class Sender(
+case class SenderForm(
     senderId: String,
     globalId: String,
     name: String,
