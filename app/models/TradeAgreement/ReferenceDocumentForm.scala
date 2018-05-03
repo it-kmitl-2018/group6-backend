@@ -1,6 +1,6 @@
 package models.TradeAgreement
 
-case class ReferenceDocument(
+case class ReferenceDocumentForm(
     id: String,
     createdDate: Long,
     referenceTypeCode: String)
