@@ -2,7 +2,7 @@ package models.TradeParty
 
 import com.sun.jndi.cosnaming.IiopUrl.Address
 
-case class Receiver(
+case class ReceiverForm(
     receiverId: String,
     globalId: String,
     name: String,

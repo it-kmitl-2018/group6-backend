@@ -1,6 +1,6 @@
 package models.TradeParty
 
-case class PaymentDetail(
+case class PaymentDetailForm(
     currencyCode: String,
     taxTypeCode: String,
     taxRate: Float,

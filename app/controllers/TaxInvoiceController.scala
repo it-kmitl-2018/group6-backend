@@ -3,7 +3,7 @@ package controllers
 import definitions.ErrorDefinition.{BAD_JSON_FORMAT, EMPTY_JSON_REQUEST, NOT_JSON_REQUEST}
 import facades.TaxInvoiceFacade
 import javax.inject._
-import models.TradeAgreement.TradeAgreement
+import models.TradeAgreement.TradeAgreementForm
 import play.api.mvc._
 import utilities.Json
 
@@ -13,7 +13,7 @@ class TaxInvoiceController @Inject()(cc: ControllerComponents, taxInvoiceFacade:
     request match {
       case _ if !request.hasBody => BadRequest(EMPTY_JSON_REQUEST)
       case _ if request.body.asJson.isEmpty => BadRequest(NOT_JSON_REQUEST)
-      case _ => validate[TradeAgreement](request, { tradeAgreement =>
+      case _ => validate[TradeAgreementForm](request, { tradeAgreement =>
         Ok(taxInvoiceFacade.getTradeAgreementAsJson(tradeAgreement))
       })
     }

@@ -1,6 +1,6 @@
 package models.TradeItem
 
-case class Item(
+case class ItemForm(
     lineId: String,
     itemAmountPerUnit: Float,
     itemQuantity: Int,
