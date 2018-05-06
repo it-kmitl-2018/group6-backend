@@ -1,4 +1,0 @@
-package converters.messages.Xml.ExchangedDocumentContext
-
-case class CIExchangedDocumentContext(
-    guidelineSpecifiedCIDocumentContextParameter: GuidelineSpecifiedCIDocumentContextParameter)
