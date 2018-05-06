@@ -1,6 +1,6 @@
 package converters.messages.Xml.ExchangedDocument
 
-case class CIIHExchangedDocument(
+case class CIIHExchangedDocumentXML(
     id: String,
     name: String,
     typeCode: String,
@@ -9,4 +9,4 @@ case class CIIHExchangedDocument(
     purposeCode: String,
     globalId: String,
     creationDateTime: Long,
-    includedCINote: IncludedCINote)
+    includedCINote: IncludedCINoteXML)
