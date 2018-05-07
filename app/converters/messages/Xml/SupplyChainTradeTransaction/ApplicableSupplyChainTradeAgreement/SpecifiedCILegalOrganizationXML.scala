@@ -1,0 +1,3 @@
+package converters.messages.Xml.SupplyChainTradeTransaction.ApplicableSupplyChainTradeAgreement
+
+case class SpecifiedCILegalOrganizationXML(id: String)
