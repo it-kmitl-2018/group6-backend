@@ -1,0 +1,3 @@
+package converters.messages.Xml.ApplicableSupplyChainTradeSettlement
+
+case class SpecifiedCITradePaymentTermsXML(typeCode: String)
