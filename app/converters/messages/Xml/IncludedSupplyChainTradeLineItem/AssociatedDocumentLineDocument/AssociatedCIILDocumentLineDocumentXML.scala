@@ -1,0 +1,3 @@
+package converters.messages.Xml.IncludedSupplyChainTradeLineItem.AssociatedDocumentLineDocument
+
+case class AssociatedCIILDocumentLineDocumentXML(lineID: String)
