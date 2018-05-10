@@ -24,4 +24,17 @@ class TaxInvoiceControllerSpec extends PlaySpec with GuiceOneAppPerTest {
       contentAsString(result) must include(jsonResponse.toString())
     }
   }
+
+  "POST /tax_invoice/xml" should {
+    "return tax invoice xml" in {
+      val json = Json.toJson(MockData.getMockTradeAgreement)
+      val xml = MockData.getMockSimpleXML
+      val request = FakeRequest(POST, "/tax_invoice/xml").withJsonBody(json)
+      val result = route(app, request).get
+
+      status(result) mustBe OK
+      contentType(result) mustBe Some("application/xml")
+      contentAsString(result) must include(xml.toString)
+    }
+  }
 }
