@@ -5,7 +5,7 @@ import models.TradeAgreement.{DealerForm, ReferenceDocumentForm, TradeAgreementF
 
 import scala.xml.Elem
 
-object MockData {
+object TaxInvoiceMock {
   private val orderReference = ReferenceDocumentForm("id1", 1234567890, "CODE1")
   private val additionalReference = ReferenceDocumentForm("id1", 1234567890, "CODE2")
   private val deliveryTypeCode = "D123"

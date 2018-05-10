@@ -1,7 +1,7 @@
 package controllers
 
 import converters.TaxInvoiceJsonConverter
-import mocks.data.MockData
+import mocks.data.TaxInvoiceMock
 import org.scalatestplus.play._
 import org.scalatestplus.play.guice._
 import play.api.test.Helpers._
@@ -13,9 +13,9 @@ class TaxInvoiceControllerSpec extends PlaySpec with GuiceOneAppPerTest {
 
   "POST /tax_invoice/json" should {
     "return tax invoice json" in {
-      val json = Json.toJson(MockData.getMockTradeAgreement)
+      val json = Json.toJson(TaxInvoiceMock.getMockTradeAgreement)
       val jsonResponse = taxInvoiceJsonConverter
-        .convertTradeAgreementToJson(MockData.getMockTradeAgreement)
+        .convertTradeAgreementToJson(TaxInvoiceMock.getMockTradeAgreement)
       val request = FakeRequest(POST, "/tax_invoice/json").withJsonBody(json)
       val result = route(app, request).get
 
@@ -27,8 +27,8 @@ class TaxInvoiceControllerSpec extends PlaySpec with GuiceOneAppPerTest {
 
   "POST /tax_invoice/xml" should {
     "return tax invoice xml" in {
-      val json = Json.toJson(MockData.getMockTradeAgreement)
-      val xml = MockData.getMockSimpleXML
+      val json = Json.toJson(TaxInvoiceMock.getMockTradeAgreement)
+      val xml = TaxInvoiceMock.getMockSimpleXML
       val request = FakeRequest(POST, "/tax_invoice/xml").withJsonBody(json)
       val result = route(app, request).get
 
