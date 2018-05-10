@@ -8,7 +8,8 @@ import play.api.mvc._
 import utilities.Json
 
 @Singleton
-class TaxInvoiceController @Inject()(cc: ControllerComponents, taxInvoiceFacade: TaxInvoiceFacade) extends AbstractController(cc) {
+class TaxInvoiceController @Inject()(cc: ControllerComponents, taxInvoiceFacade: TaxInvoiceFacade)
+  extends AbstractController(cc) {
   def convertToJson() = Action { implicit request: Request[AnyContent] =>
     validate[TradeAgreementForm](request, { tradeAgreement =>
       Ok(taxInvoiceFacade.getTradeAgreementAsJson(tradeAgreement))
