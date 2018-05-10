@@ -17,7 +17,6 @@ class TaxInvoiceControllerSpec extends PlaySpec with GuiceOneAppPerTest {
       status(result) mustBe OK
       contentType(result) mustBe Some("application/json")
       contentAsString(result) must include(json.toString())
-      //TODO: contentAsString will be updated after converter is done
     }
   }
 }
