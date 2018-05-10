@@ -1,0 +1,6 @@
+package converters.messages.Xml.IncludedSupplyChainTradeLineItem.SpecifiedSupplyChainTradeSettlement
+
+case class SpecifiedCIILSupplyChainTradeSettlementXML(
+    applicableCITradeTax: ApplicableCITradeTaxXML,
+    specifiedCITradeAllowanceCharge: SpecifiedCITradeAllowanceChargeXML,
+    specifiedCIILTradeSettlementMonetarySummation: SpecifiedCIILTradeSettlementMonetarySummationXML)
