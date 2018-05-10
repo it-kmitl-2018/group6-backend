@@ -1,0 +1,4 @@
+package converters.messages.Xml.IncludedSupplyChainTradeLineItem.SpecifiedSupplyChainTradeAgreement
+
+case class SpecifiedCIILSupplyChainTradeAgreementXML(
+    grossPriceProductCITradePrice: GrossPriceProductCITradePriceXML)
