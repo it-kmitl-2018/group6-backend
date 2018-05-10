@@ -19,6 +19,16 @@ class TaxInvoiceController @Inject()(cc: ControllerComponents, taxInvoiceFacade:
     }
   }
 
+  def convertToXML() = Action { implicit request: Request[AnyContent] =>
+    request match {
+      case _ if !request.hasBody => BadRequest(EMPTY_JSON_REQUEST)
+      case _ if request.body.asJson.isEmpty => BadRequest(NOT_JSON_REQUEST)
+      case _ => validate[TradeAgreementForm](request, { tradeAgreement =>
+        Ok(taxInvoiceFacade.getTradeAgreementAsXML(tradeAgreement))
+      })
+    }
+  }
+
   def validate[T: Manifest](request: Request[AnyContent], action: T => Result): Result = {
     val objectFromJson = Json.toObject[T](request.body.asJson.get.toString())
 
