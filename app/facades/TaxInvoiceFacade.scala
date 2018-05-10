@@ -1,13 +1,13 @@
 package facades
 
+import converters.TaxInvoiceJsonConverter
 import javax.inject.{Inject, Singleton}
-import mocks.converters.TaxInvoiceConverterMock
 import models.TradeAgreement.TradeAgreementForm
 import play.api.libs.json.JsValue
 
 @Singleton
-class TaxInvoiceFacade @Inject()(taxInvoiceConverterMock: TaxInvoiceConverterMock) {
+class TaxInvoiceFacade @Inject()(taxInvoiceJsonConverter: TaxInvoiceJsonConverter) {
   def getTradeAgreementAsJson(tradeAgreement: TradeAgreementForm): JsValue = {
-    taxInvoiceConverterMock.convertTradeAgreementToJson(tradeAgreement)
+    taxInvoiceJsonConverter.convertTradeAgreementToJson(tradeAgreement)
   }
 }
