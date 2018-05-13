@@ -6,6 +6,6 @@ case class TaxInvoice(
     number: String,
     seller: Seller,
     buyer: Buyer,
-    transactionDate: String,
+    transactionDate: Long,
     note: Note,
     items: ListBuffer[Item])
