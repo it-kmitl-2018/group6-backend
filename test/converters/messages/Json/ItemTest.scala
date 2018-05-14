@@ -6,7 +6,7 @@ class ItemTest extends FunSuite {
   val description = "ประกันภัยรถยนต์ชั้น 1"
   val quantity = 1
   val pricePerItem = 12450
-  val haveVat = "true"
+  val haveVat = true
   val vatRate = 0.07
   val item = Item(description, quantity, pricePerItem, haveVat, vatRate)
 

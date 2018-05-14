@@ -4,5 +4,5 @@ case class Item(
     description: String,
     quantity: Int,
     pricePerItem: Float,
-    haveVat: String,
+    haveVat: Boolean,
     vatRate: Double)
