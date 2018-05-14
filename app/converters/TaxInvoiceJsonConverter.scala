@@ -85,4 +85,12 @@ class TaxInvoiceJsonConverter {
     //TODO: wait for update TaxInvoiceController
     items
   }
+
+  private def convertVatTypeCodeToBoolean(vatTypeCode: String): Boolean = {
+    vatTypeCode match {
+      case "VAT" => true
+      case "FRE" => false
+    }
+
+  }
 }
