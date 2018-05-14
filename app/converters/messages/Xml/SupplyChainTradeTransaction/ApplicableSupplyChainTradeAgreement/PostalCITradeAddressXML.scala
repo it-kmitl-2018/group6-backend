@@ -11,6 +11,6 @@ case class PostalCITradeAddressXML(
     streetName: String,
     cityName: String,
     citySubDivisionName: String,
-    countryID:String,
+    countryID: String,
     countrySubDivisionID: String,
     buildingNumber: String)
