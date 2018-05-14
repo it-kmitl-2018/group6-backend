@@ -40,7 +40,7 @@ class TaxInvoiceTest extends FunSuite {
     "02-4799009",
     sellerAddress)
   val number = "INV-178324672"
-  val transactionDate = 0
+  val transactionDate = "2017-12-18 12:24:00"
   val taxInvoiceNote = Note("หมายเหตุ",
     "\n แบบรถ : Toyota Fortuner 3.0V AT 2014 TRD\n เลขเครื่อง : 1KD-FTV\n เลขตัวถัง : FN-83741\n สี : สีเทา\n")
   val itemOne = Item("Toyota Fortuner 3.0V AT 2014 TRD สีเทา ดีเซล 3,000 cc. เกียร์ออโต้", 1, 3990000, "true", 0.07)

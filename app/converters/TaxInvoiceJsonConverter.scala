@@ -18,7 +18,7 @@ class TaxInvoiceJsonConverter {
     val buyer = convertBuyerToJson(tradeAgreement.buyer, buyerAddress)
     val seller = convertSellerToJson(tradeAgreement.seller, sellerAddress)
     val number = ""
-    val transactionDate = 0
+    val transactionDate = ""
     val note = convertNoteToJson()
     val items = convertItemsToJson()
     val taxInvoice = TaxInvoice(number, seller, buyer, transactionDate, note, items)
