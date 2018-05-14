@@ -1,0 +1,4 @@
+package converters.messages.Xml.SupplyChainTradeTransaction.ApplicableSupplyChainTradeAgreement
+
+case class DefinedCITradeContactXML(
+    emailURICIUniversalCommunication: EmailURICIUniversalCommunicationXML)
