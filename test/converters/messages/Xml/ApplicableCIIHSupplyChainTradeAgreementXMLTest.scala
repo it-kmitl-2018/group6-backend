@@ -1,0 +1,15 @@
+package converters.messages.Xml
+
+import converters.messages.Xml.SupplyChainTradeTransaction.ApplicableSupplyChainTradeAgreement._
+import models.CommercialTransaction.AddressForm
+import models.TradeAgreement.{DealerForm, ReferenceDocumentForm, TradeAgreementForm}
+import org.scalatest.FunSuite
+
+class ApplicableCIIHSupplyChainTradeAgreementXMLTest extends FunSuite{
+  private val applicableCIIHSupplyChainTradeAgreementXML = mocks.data.FormDataToApplicableCIIHSupplyChainTradeAgreementXMLTestData.getMockSupplyChainTradeAgreementXML
+  private val applicableCIIHSupplyChainTradeAgreementXMLTestData = mocks.data.ApplicableCIIHSupplyChainTradeAgreementXMLTestData.getMockSupplyChainTradeAgreementXMLTestData
+
+  test("ApplicableCIIHSupplyChainTradeAgreementXML should get data from tradeAgreementForm correctly"){
+    assert(applicableCIIHSupplyChainTradeAgreementXML === applicableCIIHSupplyChainTradeAgreementXMLTestData)
+  }
+}
