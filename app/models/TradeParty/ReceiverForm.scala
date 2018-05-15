@@ -1,6 +1,6 @@
 package models.TradeParty
 
-import com.sun.jndi.cosnaming.IiopUrl.Address
+import models.CommercialTransaction.AddressForm
 
 case class ReceiverForm(
     receiverId: String,
@@ -9,4 +9,4 @@ case class ReceiverForm(
     department: String,
     uri: String,
     phoneNumber: String,
-    address: Address)
+    address: AddressForm)
